@@ -1,5 +1,7 @@
 package ada9;
 
+import java.util.Scanner;
+
 public class HashTable {
     String[][] table;
     int tableSize;
@@ -97,14 +99,30 @@ public class HashTable {
     
     public static void main(String args[]) {
     	HashTable hash = new HashTable(5);
-    	
-    	hash.add("One", "1");
-    	hash.add("Two", "2");
-    	hash.add("Three", "3");
-    	
-    	String str = hash.get("Three");
-    	System.out.println(str);
-    	hash.remove("Two");
+    	Scanner se = new Scanner(System.in);
+    	System.out.print("Enter 1: Add into Dictionary\n2: Remove from Dictionary\n3: Get element from a given key\n-1:Exit");
+    	int choice = 0;
+    	while(choice != -1) {
+    		choice = se.nextInt();
+    		switch(choice) {
+    			case 1: System.out.println("Enter key:");
+    					String key = se.next();
+    					System.out.println("Enter value:");
+    					String val = se.next();
+    					hash.add(key, val);
+    					break;
+    			case 2:	System.out.println("Enter key to remove:");
+						String key2 = se.next();
+						hash.remove(key2);
+						break;
+    			case 3: System.out.println("Enter key to Get:");
+						String key3 = se.next();
+						System.out.println("Key:"+key3+" Value: "+hash.get(key3));
+						break;
+				default: System.out.print("Enter right number");
+						break;
+    		}
+    	}
     }
 
 }
