@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ArrayElements { 
 	
-	static void findElements(int arr[], int n) { 
+	static void solution(int arr[], int n) { 
 		Arrays.sort(arr); 
 		  
 	    for (int i = 0; i < n - 2; i++) 
@@ -20,7 +20,7 @@ public class ArrayElements {
 			for(int j=0;j<n;j++) {
 				arr[j] = se.nextInt();
 			}
-			findElements(arr, n);	
+			solution(arr, n);	
 		} 
 	} 
 } 
